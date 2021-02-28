@@ -53,11 +53,11 @@ Let's see if we can execute commands in this panel, first we try `ls`
 ![ls results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr7.png "ls results")
 
 The first file seems promising, we try to open it with the command `cat`
-![cat results](../images/pr8.png "cat results")
+![cat results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr8.png "cat results")
 
 The command is disabled. We try with the command `less`
 
-![less results](../images/pr9.png "less results")
+![less results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr9.png "less results")
 
 We got our first ingredient.
 
@@ -65,31 +65,31 @@ Then we use `less` to read the content of the `clue.txt` file, and it says, <q>L
 
 Now, to see the directory we are in the system we use `pwd`
 
-![pwd results](../images/pr10.png "pwd results")
+![pwd results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr10.png "pwd results")
 
 Then we list the `root` directory
 
-![ls root](../images/pr11.png "ls root")
+![ls root](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr11.png "ls root")
 
 the `home` directory has two subfolders, we list the one named `rick`, inside there is a file with the name `second ingredients`. We use `less` to view the content
 
-![second ingredients](../images/pr12.png "second ingredients")
+![second ingredients](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr12.png "second ingredients")
 
 If we try to list the `/root` directory the command doesn't work. Let's verify the permissions for that folder
 
-![root permissions](../images/pr13.png "root permissions")
+![root permissions](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr13.png "root permissions")
 
 As expected, we don't have the permissions to access that directory. To check what commands we can issue as ´root´ we can use `sudo -l`
 
-![sudo permissions](../images/pr14.png "sudo permission")
+![sudo permissions](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr14.png "sudo permission")
 
 We have full access!! Let's see what's in the `/root` directory
 
-![ls /root](../images/pr15.png "ls /root")
+![ls /root](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr15.png "ls /root")
 
 With `less` we see the content of the `3rd.txt` file
 
-![3rd.txt](../images/pr16.png "3rd.txt")
+![3rd.txt](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr16.png "3rd.txt")
 
 That's all, we have the three ingredients needed to turn Rick back into his human form.
 
