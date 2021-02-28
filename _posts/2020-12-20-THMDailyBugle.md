@@ -19,7 +19,7 @@ This is a write-up for the machine [Daily Bugle](https://tryhackme.com/room/dail
 
 `Nmap` scan to check for open ports and services.
 
-![nmap](../images/dailybugle/dai1.png)
+![nmap](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai1.png)
 
 The host seems to be running `CentOS` as OS.
 
@@ -29,11 +29,11 @@ The host seems to be running `CentOS` as OS.
 
 The `nmap` scan already have found 15 disallowed entries in a `robots.txt` file. Running `gobuster` against the server yields this results.
 
-![gobuster](../images/dailybugle/dai2.png)
+![gobuster](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai2.png)
 
 The web server shows this page.
 
-![web](../images/dailybugle/dai3.png)
+![web](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai3.png)
 
 In the `/administrator` folder we have the `Joomla` login page. A vulnerability scan using `nmap` tells us that this version of `Joomla` is vulnerable to `SQLI`. We follow the information from [this exploit](https://www.exploit-db.com/exploits/42033).
 
@@ -49,7 +49,7 @@ sqlmap -u "http://10.10.173.19/index.php?option=com_fields&view=fields&layout=mo
 sqlmap -u "http://10.10.173.19/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering] --batch --dump -D mysql -T user -C User,Password
 ````
 
-![user](../images/dailybugle/dai4.png)
+![user](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai4.png)
 
 But the result is not useful, we are looking for a `Jonah` user. Finally we dump the table `#__users` and then we find the user credentials we were looking for.
 
@@ -57,11 +57,11 @@ But the result is not useful, we are looking for a `Jonah` user. Finally we dump
 sqlmap -u "http://10.10.173.19/index.php?option=com_fields&view=fields&layout=modal&list[fullordering]=updatexml" --risk=3 --level=5 --random-agent --dbs -p list[fullordering] -D joomla -T "#__users" --dump -C name,username,email,password
 ````
 
-![table](../images/dailybugle/dai5.png)
+![table](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai5.png)
 
 With `john` we can crack this password.
 
-![john](../images/dailybugle/dai6.png)
+![john](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai6.png)
 
 And with this credentials we can access the `joomla` control panel.
 
@@ -80,25 +80,25 @@ The steps we have to follow are
 
 Following those steps we gain a shell as the user `apache`.
 
-![shell](../images/dailybugle/dai7.png)
+![shell](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai7.png)
 
 ## Local Enumeration
 
 The only user on the machine is `jjameson` and we can't access his files. Enumerating the `/var/www` directory we find some credentials in the `configuration.php` file.
 
-![credentials](../images/dailybugle/dai8.png)
+![credentials](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai8.png)
 
 If we try to `ssh` to the machine as `jjameson` with that password we have access and can now read the user flag.
 
-![ssh](../images/dailybugle/dai9.png)
+![ssh](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai9.png)
 
 ## Privilege Escalation
 
 Running `sudo -l` as `jjameson` yields this result.
 
-![sudo -l](../images/dailybugle/dai10.png)
+![sudo -l](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai10.png)
 
 According to [this entry](https://gtfobins.github.io/gtfobins/yum/#sudo) on `gtfobins` this can be used to escalate privileges. 
 
-![root](../images/dailybugle/dai11.png)
+![root](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/dailybugle/dai11.png)
 

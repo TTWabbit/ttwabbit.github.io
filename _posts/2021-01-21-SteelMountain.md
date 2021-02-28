@@ -59,17 +59,17 @@ Service detection performed. Please report any incorrect results at https://nmap
 ````
 Connecting to the service at port 80 with our web browser we can see the picture of the employee of the month.
 
-![Employee of the month](../images/sm1.png "Employee of the month")
+![Employee of the month](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm1.png "Employee of the month")
 
 If we look at the source code we have the name
 
-![Source code](../images/sm2.png "First question")
+![Source code](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm2.png "First question")
 
 ## Initial Shell Vulnerability Exploited
 
 If we navigate to port 8080 with a web browser we find this service
 
-![Service in port 8080](../images/sm3.png "Service in port 8080")
+![Service in port 8080](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm3.png "Service in port 8080")
 
 ### Vulnerability Explanation
 
@@ -88,11 +88,11 @@ Critical
 
 In this case we use metasploit framework to gain a shell into the system. We have to set up the options `rhosts` and `rport` to match the machine ip and port of the service.
 
-![Meterpreter session](../images/sm4.png "Meterpreter session")
+![Meterpreter session](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm4.png "Meterpreter session")
 
 And we can obtain the user flag.
 
-![User flag](../images/sm5.png "User flag")
+![User flag](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm5.png "User flag")
 
 ## Privilege Escalation
 
@@ -111,7 +111,7 @@ PS > Invoke-AllChecks
 
 The output of the previous command gives us this information about this windows service
 
-![Exploitable Windows Service](../images/sm6.png "Exploitable windows service")
+![Exploitable Windows Service](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm6.png "Exploitable windows service")
 
 ### Vulnerability Explanation
 
@@ -178,7 +178,7 @@ The service did not respond to the start or control request in a timely fashion.
 
 We receive a shell with elevated privileges, and can read the root flag
 
-![Root flag](../images/sm7.png "Root flag")
+![Root flag](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/steelmountain/sm7.png "Root flag")
 
 ## Access and privilege escalation without Metasploit
 
