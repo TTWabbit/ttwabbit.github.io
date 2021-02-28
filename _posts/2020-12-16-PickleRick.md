@@ -18,31 +18,31 @@ This is a write up for the [tryhackme](https://www.tryhackme.com "Home page of T
 
 First step, to enumerate the target machine and see what ports and service is running we use `nmap` .
 
-![Nmap Results](../../../static/img/_posts/picklerick/pr1.png "Nmap Results")
+![Nmap Results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr1.png "Nmap Results")
 
 So there are an http service running in port 80 and a ssh service running in port 22. The information given in the introduction tells us to focus on the webserver.
 
 We navigate to the given IP and see a static webpage. If we look at the source code
 
-![Source Code](../images/pr2.png "Username")
+![Source Code](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr2.png "Username")
 
 We got a username. Next we are going to use `gobuster` to scan the web site and see if there is some place we can use this username, or get more info.
 
-![Gobuster Results](../images/pr3.png "Gobuster Results")
+![Gobuster Results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr3.png "Gobuster Results")
 
 We have some interesting pages in this results. Let's visit them.
 
-![Assets](../images/pr4.png "Assets")
+![Assets](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr4.png "Assets")
 
 Nothing seems to be out of the ordinary here.
 
-![Login](../images/pr5.png "Login")
+![Login](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr5.png "Login")
 
 We have a possible username but no password yet.
 
 In the `robots.txt` page we find a word. We try to login with the previously found username and this word as password, access is granted to a Command Panel
 
-![Command Panel](../images/pr6.png "Command Pannel")
+![Command Panel](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr6.png "Command Pannel")
 
 The links Potions, Creatures, and Beth Clone redirect to a `/denied.php` page where we can see Pickle Rick.
 
@@ -50,7 +50,7 @@ The links Potions, Creatures, and Beth Clone redirect to a `/denied.php` page wh
 
 Let's see if we can execute commands in this panel, first we try `ls`
 
-![ls results](../images/pr7.png "ls results")
+![ls results](https://raw.githubusercontent.com/TTWabbit/ttwabbit.github.io/master/static/img/_posts/picklerick/pr7.png "ls results")
 
 The first file seems promising, we try to open it with the command `cat`
 ![cat results](../images/pr8.png "cat results")
