@@ -1,9 +1,9 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+title: TTWabbit Blog
+description: Write ups and other stuff Cybersec related.
+author: Antonio Tascón
+github: https://github.com/TTWabbit
+about: I'm a Cybersec enthusiast looking to make a career in the field.
+disqus_shortname: ttwabbit
 google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
