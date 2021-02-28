@@ -18,7 +18,7 @@ This is a write up for the [tryhackme](https://www.tryhackme.com "Home page of T
 
 First step, to enumerate the target machine and see what ports and service is running we use `nmap` .
 
-![Nmap Results](../images/pr1.png "Nmap Results")
+![Nmap Results](../static/img/_posts/picklerick/pr1.png "Nmap Results")
 
 So there are an http service running in port 80 and a ssh service running in port 22. The information given in the introduction tells us to focus on the webserver.
 
