@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Skynet
+title: Skynet Write Up
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write-up for the room [Skynet](https://tryhackme.com/room/skynet) from [tryhackme](https://tryhackme.com).

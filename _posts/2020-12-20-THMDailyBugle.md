@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Daily Bugle
+title: Daily Bugle Write Up
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write-up for the machine [Daily Bugle](https://tryhackme.com/room/dailybugle) from [tryhackme](https://tryhackme.com).

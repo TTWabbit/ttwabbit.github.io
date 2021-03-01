@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Pickle Rick Write Up
+title: "Pickle Rick Write Up"
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write up for the [tryhackme](https://www.tryhackme.com "Home page of TryHackMe") room [Pickle Rick](https://tryhackme.com/room/picklerick "Pickle Rick Room")

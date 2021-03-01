@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
+Hi, I'm Antonio Tascón Márquez, I have a background in Telecommunications Engineering and I'm learning about web development, Salesforce and all things related to Cybersecurity.
 
-email: agus[at]python.web.id
+email: toni.teleco@gmail.com

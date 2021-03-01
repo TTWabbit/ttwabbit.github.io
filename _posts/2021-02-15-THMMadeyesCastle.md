@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Madeye's Castle
+title: "Madeye's Castle Write Up"
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write up for the room [Madeye's Castle](https://tryhackme.com/room/madeyescastle) from [tryhackme](https://tryhackme.com)

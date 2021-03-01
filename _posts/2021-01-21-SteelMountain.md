@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Steel Mountain
+title: "Steel Mountain Write Up"
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write up for the room [Steel Mountain](https://tryhackme.com/room/steelmountain) from [tryhackme](https://tryhackme.com)

@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Archangel
+title: "Archangel Write Up"
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write up for the room [Archangel](https://tryhackme.com/room/archangel) from [tryhackme](https://tryhackme.com).

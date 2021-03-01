@@ -1,6 +1,7 @@
 ---
 layout: post
-title: THM Alfred
+title: "Alfred Write Up"
+categories: [cybersecurity, writeUps, tryHackMe]
 ---
 
 This is a write-up for the machine [Alfred](https://tryhackme.com/room/alfred) from [tryhackme](https://tryhackme.com).
